@@ -1,26 +1,17 @@
-let wishProducts = JSON.parse(localStorage.getItem("wishlist"))
+let wishProducts = JSON.parse(localStorage.getItem("wishlist"));
 
-let wishQW = document.querySelector('#items');
+let wishQW = document.querySelector("#items");
 
-if(wishProducts.length > 0){
-
-    wishQW.innerHTML = JSON.parse(localStorage.getItem('wishlist')).length;
-
+if (wishProducts.length > 0) {
+  wishQW.innerHTML = JSON.parse(localStorage.getItem("wishlist")).length;
 }
 
- 
-
-document.readyState
+document.readyState;
 
 for (let prod of wishProducts) {
+  let card = document.createElement("div");
 
- 
-
-    let card = document.createElement('div');
-
- 
-
-    card.innerHTML = `
+  card.innerHTML = `
 
                      <img src="${prod.ImgURL}" alt="product_image">
 
@@ -30,20 +21,11 @@ for (let prod of wishProducts) {
 
                     <button onClick="deleteFromWishlist(this)" >Delete</button>
 
-                    `
+                    `;
 
-        ;
-
-    document.querySelector('.cardContainer').appendChild(card)
-
- 
-
+  document.querySelector(".cardContainer").appendChild(card);
 }
 
- 
-
-function deleteFromWishlist(btn){
-
-btn.parentElement.style.display = "none"
-
+function deleteFromWishlist(btn) {
+  btn.parentElement.style.display = "none";
 }
